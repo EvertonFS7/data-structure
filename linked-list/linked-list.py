@@ -49,56 +49,47 @@ class DoublyLinkedList:
             self.tail.next = None
         return removed_value
     
-# Criar a lista duplamente encadeada
 dll = DoublyLinkedList()
 
-# Teste 1: remover da frente e do fim em lista vazia
-print(dll.remove_from_front())  # Saída: None (lista está vazia)
-print(dll.remove_from_end())    # Saída: None (lista está vazia)
+print(dll.remove_from_front())  
+print(dll.remove_from_end())    
 
-# Teste 2: adicionar um elemento na frente
 dll.add_to_front(100)
-print(dll.head.value)  # Saída: 100 (único elemento)
-print(dll.tail.value)  # Saída: 100 (único elemento)
+print(dll.head.value) 
+print(dll.tail.value) 
 
-# Teste 3: adicionar um elemento no fim
 dll.add_to_end(200)
-print(dll.head.value)  # Saída: 100 (continua cabeça)
-print(dll.tail.value)  # Saída: 200 (novo elemento no fim)
+print(dll.head.value) 
+print(dll.tail.value) 
 
-# Teste 4: adicionar outro elemento na frente
 dll.add_to_front(50)
-print(dll.head.value)  # Saída: 50 (novo elemento na frente)
-print(dll.tail.value)  # Saída: 200 (fim permanece)
+print(dll.head.value)  
+print(dll.tail.value)  
 
-# Teste 5: remover do front
 removido = dll.remove_from_front()
-print(removido)        # Saída: 50 (elemento removido da frente)
-print(dll.head.value)  # Saída: 100 (novo elemento da frente)
-print(dll.tail.value)  # Saída: 200
+print(removido)        
+print(dll.head.value)  
+print(dll.tail.value)  
 
-# Teste 6: remover do fim
 removido = dll.remove_from_end()
-print(removido)        # Saída: 200 (elemento removido do fim)
-print(dll.head.value)  # Saída: 100 (único elemento restante)
-print(dll.tail.value)  # Saída: 100
+print(removido)        
+print(dll.head.value)  
+print(dll.tail.value)  
 
-# Teste 7: remover até a lista ficar vazia
 removido = dll.remove_from_front()
-print(removido)        # Saída: 100 (último elemento removido)
-print(dll.head)        # Saída: None (lista vazia)
-print(dll.tail)        # Saída: None (lista vazia)
+print(removido)        
+print(dll.head)        
+print(dll.tail)        
 
-# Teste 8: adicionar vários elementos no fim e remover todos
 dll.add_to_end(1)
 dll.add_to_end(2)
 dll.add_to_end(3)
-print(dll.head.value)  # Saída: 1 (primeiro elemento)
-print(dll.tail.value)  # Saída: 3 (último elemento)
+print(dll.head.value)  
+print(dll.tail.value)  
 
-print(dll.remove_from_front())  # Saída: 1
-print(dll.remove_from_end())    # Saída: 3
-print(dll.remove_from_front())  # Saída: 2
+print(dll.remove_from_front())  
+print(dll.remove_from_end())    
+print(dll.remove_from_front())  
 
-print(dll.head)  # Saída: None (lista vazia)
-print(dll.tail)  # Saída: None (lista vazia)
+print(dll.head)  
+print(dll.tail)  
