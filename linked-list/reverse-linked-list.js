@@ -1,13 +1,14 @@
-const reverseList = function(head) {
-  let prev = null;
-  let current = head;
-
-  while (current !== null) {
-      let nextNode = current.next;
-      current.next = prev;
-      prev = current;
-      current = nextNode;
+class Solution {
+  reverseList(head) {
+    let newList = null  
+ 
+    while (head) { 
+      let nextNode = head.next 
+      head.next = newList // reverse the pointer: point current node to new list
+      newList = head   // move newList pointer to current node
+      head = nextNode // move head forward to the next node
+    } 
+ 
+    return newList 
   }
-
-  return prev;
-};
+}
