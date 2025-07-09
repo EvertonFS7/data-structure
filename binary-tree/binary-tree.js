@@ -70,6 +70,32 @@ class BinaryTree {
       return true;
     }
   }
+
+  bfs(value) {
+    if (!this.root) return false
+    const queue = []
+
+    queue.push(this.root)
+
+    while (queue.length > 0) {
+      const node = queue.shift()
+      console.log(node.value);
+
+      if (node.value === value) {
+        return true
+      }
+
+      if (node.left) {
+        queue.push(node.left)
+      }
+
+      if (node.right) {
+        queue.push(node.right)
+      }
+    }
+
+    return false
+  }
 }
 
 const tree = new BinaryTree();
@@ -82,3 +108,6 @@ console.log(tree.search(4)); // false
 console.log(tree.search(10)); // true
 console.log(tree.search(15)); // true
 console.log("dfs: ", tree.dfs(20)); // DFS
+
+console.log("bfs: ", tree.bfs(7)); 
+console.log("bfs: ", tree.bfs(50));
