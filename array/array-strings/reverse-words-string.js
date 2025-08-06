@@ -1,13 +1,17 @@
 function reverseWords (s) {
-    const words = s.split(' ')
+    let words = s.split(' ');
+    let res = [];
 
-    for (let i = 0; i < words.length; i++) {
-        words[i] = words[i].split('').reverse().join('')
+    for (let i = words.length - 1; i >= 0; i--) {
+        if (words[i]) {
+            res.push(words[i]);
+        }
     }
-    
-    return words.join(' ')
+
+    return res.join(' ');
 }
 
-const s = "Mr Ding"
+const s = "Olá Mundo"
 
 console.log(reverseWords(s)) 
+
